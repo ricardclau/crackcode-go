@@ -1,30 +1,31 @@
 package queues
 
-type Node struct {
-	Value interface{}
-	Next  *Node
+type node struct {
+	value interface{}
+	next  *node
 }
 
 type Stack struct {
-	top *Node
+	top *node
 }
 
 func (s *Stack) IsEmpty() bool {
 	return s.top == nil
 }
 
-func (s *Stack) Push(n *Node) {
-	n.Next = s.top
+func (s *Stack) Push(item interface{}) {
+	n := &node{value: item}
+	n.next = s.top
 	s.top = n
 }
 
-func (s *Stack) Pop() *Node {
+func (s *Stack) Pop() interface{} {
 	if s.IsEmpty() {
 		return nil
 	}
 
-	oldTop := s.top
-	s.top = oldTop.Next
+	old := s.top
+	s.top = old.next
 
-	return oldTop
+	return old.value
 }

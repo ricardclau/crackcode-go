@@ -13,14 +13,14 @@ func TestEmptyStack(t *testing.T) {
 
 func TestPushPopOneElement(t *testing.T) {
 	s := Stack{}
-	s.Push(&Node{Value: 1})
+	s.Push(1)
 
 	if s.IsEmpty() {
 		t.Error("Push did not work properly")
 	}
 
-	if a := s.Pop(); a.Value != 1 {
-		t.Errorf("Unexpected value %s", a.Value)
+	if a := s.Pop(); a != 1 {
+		t.Errorf("Unexpected value %s", a)
 	}
 
 	if !s.IsEmpty() {
@@ -30,30 +30,30 @@ func TestPushPopOneElement(t *testing.T) {
 
 func TestPushPopManyElements(t *testing.T) {
 	s := Stack{}
-	s.Push(&Node{Value: 1})
-	s.Push(&Node{Value: 2})
-	s.Push(&Node{Value: 3})
-	s.Push(&Node{Value: 4})
-	s.Push(&Node{Value: 5})
+	s.Push(1)
+	s.Push(2)
+	s.Push("aaaa")
+	s.Push(12.45)
+	s.Push(5)
 
-	if a := s.Pop(); a.Value != 5 {
-		t.Errorf("Unexpected value %s", a.Value)
+	if a := s.Pop(); a != 5 {
+		t.Errorf("Unexpected value %s", a)
 	}
 
-	if a := s.Pop(); a.Value != 4 {
-		t.Errorf("Unexpected value %s", a.Value)
+	if a := s.Pop(); a != 12.45 {
+		t.Errorf("Unexpected value %s", a)
 	}
 
-	if a := s.Pop(); a.Value != 3 {
-		t.Errorf("Unexpected value %s", a.Value)
+	if a := s.Pop(); a != "aaaa" {
+		t.Errorf("Unexpected value %s", a)
 	}
 
-	if a := s.Pop(); a.Value != 2 {
-		t.Errorf("Unexpected value %s", a.Value)
+	if a := s.Pop(); a != 2 {
+		t.Errorf("Unexpected value %s", a)
 	}
 
-	if a := s.Pop(); a.Value != 1 {
-		t.Errorf("Unexpected value %s", a.Value)
+	if a := s.Pop(); a != 1 {
+		t.Errorf("Unexpected value %s", a)
 	}
 
 	if !s.IsEmpty() {
