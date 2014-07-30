@@ -1,4 +1,9 @@
 crackcode-go
 ============
 
-CrackCode exercises, in Go
+CrackCode exercises and algorithms implementations, in Go
+
+Queues
+------
+
+- Stack using a Linked List -> stack.go
