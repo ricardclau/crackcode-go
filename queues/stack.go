@@ -1,8 +1,8 @@
 package queues
 
 type node struct {
-	value interface{}
-	next  *node
+	item interface{}
+	next *node
 }
 
 type Stack struct {
@@ -14,7 +14,7 @@ func (s *Stack) IsEmpty() bool {
 }
 
 func (s *Stack) Push(item interface{}) {
-	n := &node{value: item}
+	n := &node{item: item}
 	n.next = s.top
 	s.top = n
 }
@@ -27,5 +27,5 @@ func (s *Stack) Pop() interface{} {
 	old := s.top
 	s.top = old.next
 
-	return old.value
+	return old.item
 }

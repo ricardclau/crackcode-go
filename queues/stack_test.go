@@ -9,6 +9,10 @@ func TestEmptyStack(t *testing.T) {
 	if !s.IsEmpty() {
 		t.Error("IsEmpty not working properly")
 	}
+
+	if s.Pop() != nil {
+		t.Error("WTF?")
+	}
 }
 
 func TestPushPopOneElement(t *testing.T) {
@@ -25,6 +29,10 @@ func TestPushPopOneElement(t *testing.T) {
 
 	if !s.IsEmpty() {
 		t.Error("Pop did not work properly")
+	}
+
+	if s.Pop() != nil {
+		t.Error("Pod did not clear the last element")
 	}
 }
 
