@@ -1,10 +1,5 @@
 package queues
 
-type node struct {
-	item interface{}
-	next *node
-}
-
 type Stack struct {
 	top *node
 }

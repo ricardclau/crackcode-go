@@ -67,4 +67,8 @@ func TestPushPopManyElements(t *testing.T) {
 	if !s.IsEmpty() {
 		t.Error("Pop did not work properly")
 	}
+
+	if s.Pop() != nil {
+		t.Error("Pod did not clear the last element")
+	}
 }
