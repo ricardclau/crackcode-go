@@ -8,4 +8,7 @@ CrackCode exercises and algorithms implementations, in Go
 Queues
 ------
 
-- Stack using a Linked List: stack.go
+- Stack using a Linked List: stacklinkedlist.go
+- Queue using a Linked List: queuelinkedlist.go
+- Stack using a resizing array: stackresizingarray.go
+- Queue using a resizing array: queueresizingarray.go
