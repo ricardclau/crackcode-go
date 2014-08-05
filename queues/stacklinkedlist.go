@@ -1,20 +1,20 @@
 package queues
 
-type Stack struct {
+type StackLinkedList struct {
 	top *node
 }
 
-func (s *Stack) IsEmpty() bool {
+func (s *StackLinkedList) IsEmpty() bool {
 	return s.top == nil
 }
 
-func (s *Stack) Push(item interface{}) {
+func (s *StackLinkedList) Push(item interface{}) {
 	n := &node{item: item}
 	n.next = s.top
 	s.top = n
 }
 
-func (s *Stack) Pop() interface{} {
+func (s *StackLinkedList) Pop() interface{} {
 	if s.IsEmpty() {
 		return nil
 	}

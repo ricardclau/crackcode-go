@@ -1,15 +1,15 @@
 package queues
 
-type Queue struct {
+type QueueLinkedList struct {
 	first *node
 	last  *node
 }
 
-func (q *Queue) IsEmpty() bool {
+func (q *QueueLinkedList) IsEmpty() bool {
 	return q.first == nil
 }
 
-func (q *Queue) Enqueue(item interface{}) {
+func (q *QueueLinkedList) Enqueue(item interface{}) {
 	oldLast := q.last
 	q.last = &node{item: item}
 
@@ -20,7 +20,7 @@ func (q *Queue) Enqueue(item interface{}) {
 	}
 }
 
-func (q *Queue) Dequeue() interface{} {
+func (q *QueueLinkedList) Dequeue() interface{} {
 	if q.IsEmpty() {
 		return nil
 	}

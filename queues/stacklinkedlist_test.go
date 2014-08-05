@@ -4,8 +4,8 @@ import (
 	"testing"
 )
 
-func TestEmptyStack(t *testing.T) {
-	s := Stack{}
+func TestEmptyStackLL(t *testing.T) {
+	s := StackLinkedList{}
 	if !s.IsEmpty() {
 		t.Error("IsEmpty not working properly")
 	}
@@ -15,8 +15,8 @@ func TestEmptyStack(t *testing.T) {
 	}
 }
 
-func TestPushPopOneElement(t *testing.T) {
-	s := Stack{}
+func TestPushPopOneElementLL(t *testing.T) {
+	s := StackLinkedList{}
 	s.Push(1)
 
 	if s.IsEmpty() {
@@ -36,8 +36,8 @@ func TestPushPopOneElement(t *testing.T) {
 	}
 }
 
-func TestPushPopManyElements(t *testing.T) {
-	s := Stack{}
+func TestPushPopManyElementsLL(t *testing.T) {
+	s := StackLinkedList{}
 	s.Push(1)
 	s.Push(2)
 	s.Push("aaaa")

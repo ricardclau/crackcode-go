@@ -4,8 +4,8 @@ import (
 	"testing"
 )
 
-func TestEmptyQueue(t *testing.T) {
-	q := Queue{}
+func TestEmptyQueueLL(t *testing.T) {
+	q := QueueLinkedList{}
 	if !q.IsEmpty() {
 		t.Error("IsEmpty not working properly")
 	}
@@ -15,8 +15,8 @@ func TestEmptyQueue(t *testing.T) {
 	}
 }
 
-func TestEnqueue(t *testing.T) {
-	q := Queue{}
+func TestEnqueueLL(t *testing.T) {
+	q := QueueLinkedList{}
 	q.Enqueue(1)
 
 	if q.IsEmpty() {
@@ -36,8 +36,8 @@ func TestEnqueue(t *testing.T) {
 	}
 }
 
-func TestEnqDeqManyElements(t *testing.T) {
-	q := Queue{}
+func TestEnqDeqManyElementsLL(t *testing.T) {
+	q := QueueLinkedList{}
 	q.Enqueue(1)
 	q.Enqueue(2)
 	q.Enqueue("aaaa")
