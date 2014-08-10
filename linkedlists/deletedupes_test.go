@@ -1,8 +1,6 @@
 package linkedlists
 
 import (
-	"strconv"
-	"strings"
 	"testing"
 )
 
@@ -57,20 +55,4 @@ func TestSomeDupesWithNoOrder(t *testing.T) {
 	if NumericListToString(list) != "[4,1,5,3,6,2]" {
 		t.Error("Problems with deleting when all elements are equal: %v", NumericListToString(list))
 	}
-}
-
-func NumericListToString(s *SingleLinkedList) string {
-	out := "["
-	if !s.IsEmpty() {
-		current := s.top
-		for current != nil {
-			out += strconv.Itoa(current.item.(int)) + ","
-			current = current.next
-		}
-	}
-
-	out = strings.TrimSuffix(out, ",")
-	out += "]"
-
-	return out
 }

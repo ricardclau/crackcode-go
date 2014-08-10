@@ -10,6 +10,8 @@ Linked Lists
 
 - Delete duplicates in a Single Linked List with no extra structures: deletedupes.go
 - Implement an algorithm to find the nth to the last element of a singly linked list: nthtothelast.go
+- Delete a node from a Linked List with only access to that node: deletenode.go
+	* If node to be deleted happens to be the last in the LinkedList the problem is impossible to solve
 
 Queues
 ------
