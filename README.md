@@ -33,4 +33,4 @@ Trees and Graphs
 
 - Find distance between 2 given keys of a Binary Tree: distancebinarytree.go
 
-![Binary Tree example]http://d2o58evtke57tz.cloudfront.net/wp-content/uploads/dist.png
+<img title="Binary Tree example" src="http://d2o58evtke57tz.cloudfront.net/wp-content/uploads/dist.png" />
