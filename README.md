@@ -1,7 +1,7 @@
 crackcode-go
 ============
 
-CrackCode exercises and algorithms implementations, in Go
+CrackCode exercises and some others, algorithms implementations, in Go
 
 [![Build Status](https://travis-ci.org/ricardclau/crackcode-go.svg)](https://travis-ci.org/ricardclau/crackcode-go)
 
@@ -20,3 +20,17 @@ Queues
 - Queue using a Linked List: queuelinkedlist.go
 - Stack using a resizing array: stackresizingarray.go
 - Queue using a resizing array: queueresizingarray.go
+
+Mathematical
+------------
+
+Please note some of them are not programming related and explained in problems.md
+
+- Implement substraction, multiplication and division only using the `+` operator: operationswithplus.go (WIP)
+
+Trees and Graphs
+----------------
+
+- Find distance between 2 given keys of a Binary Tree: distancebinarytree.go
+
+![Binary Tree example]http://d2o58evtke57tz.cloudfront.net/wp-content/uploads/dist.png
