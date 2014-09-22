@@ -32,5 +32,9 @@ Trees and Graphs
 ----------------
 
 - Find distance between 2 given keys of a Binary Tree: distancebinarytree.go
+- Find out if a binary tree is balanced: distancebinarytree.go
+
+Example of binary Tree
 
 <img title="Binary Tree example" src="http://d2o58evtke57tz.cloudfront.net/wp-content/uploads/dist.png" />
+

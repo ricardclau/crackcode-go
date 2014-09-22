@@ -1,5 +1,9 @@
 package treesgraphs
 
+import (
+	"math"
+)
+
 type BinaryTreeNode struct {
 	Key   int
 	Left  *BinaryTreeNode
@@ -14,19 +18,39 @@ type BinaryTree struct {
 // If you don´t have a link to the parent the only way is to find the Lowest Common Ancestor
 // and the distance is depth(root, key1) + depth(root, key2) - 2 * depth(root, LCA)
 func BinaryTreeDistance(tree *BinaryTree, key1 int, key2 int) int {
-	depth1 := BinaryTreeDepth(tree, key1)
+	depth1 := BinaryTreeKeyDepth(tree, key1)
 	if depth1 == -1 {
 		return -1
 	}
 
-	depth2 := BinaryTreeDepth(tree, key2)
+	depth2 := BinaryTreeKeyDepth(tree, key2)
 	if depth2 == -1 {
 		return -1
 	}
 
 	lca := TreeLCA(tree, key1, key2)
 
-	return depth1 + depth2 - 2*BinaryTreeDepth(tree, lca.Key)
+	return depth1 + depth2 - 2*BinaryTreeKeyDepth(tree, lca.Key)
+}
+
+func IsTreeBalanced(tree *BinaryTree) bool {
+	return math.Abs(float64(BinaryTreeRecursiveMaxDepth(tree.Root)-BinaryTreeRecursiveMinDepth(tree.Root))) <= 1
+}
+
+func BinaryTreeRecursiveMaxDepth(Root *BinaryTreeNode) int64 {
+	if Root == nil {
+		return 0
+	}
+
+	return 1 + int64(math.Max(float64(BinaryTreeRecursiveMaxDepth(Root.Left)), float64(BinaryTreeRecursiveMaxDepth(Root.Right))))
+}
+
+func BinaryTreeRecursiveMinDepth(Root *BinaryTreeNode) int64 {
+	if Root == nil {
+		return 0
+	}
+
+	return 1 + int64(math.Min(float64(BinaryTreeRecursiveMinDepth(Root.Left)), float64(BinaryTreeRecursiveMinDepth(Root.Right))))
 }
 
 func TreeLCA(Tree *BinaryTree, key1 int, key2 int) *BinaryTreeNode {
@@ -59,15 +83,15 @@ func recursiveLCA(root *BinaryTreeNode, key1 int, key2 int) *BinaryTreeNode {
 	return recursiveLCA(root.Right, key1, key2)
 }
 
-func BinaryTreeDepth(Tree *BinaryTree, key int) int {
+func BinaryTreeKeyDepth(Tree *BinaryTree, key int) int {
 	if key == Tree.Root.Key {
 		return 0
 	}
 
-	return recursiveBinaryTreeDepth(Tree.Root, key, 0)
+	return recursiveBinaryTreeKeyDepth(Tree.Root, key, 0)
 }
 
-func recursiveBinaryTreeDepth(Root *BinaryTreeNode, key int, level int) int {
+func recursiveBinaryTreeKeyDepth(Root *BinaryTreeNode, key int, level int) int {
 	if Root == nil {
 		return -1
 	}
@@ -76,10 +100,10 @@ func recursiveBinaryTreeDepth(Root *BinaryTreeNode, key int, level int) int {
 		return level
 	}
 
-	depth := recursiveBinaryTreeDepth(Root.Left, key, level+1)
+	depth := recursiveBinaryTreeKeyDepth(Root.Left, key, level+1)
 	if depth != -1 {
 		return depth
 	}
 
-	return recursiveBinaryTreeDepth(Root.Right, key, level+1)
+	return recursiveBinaryTreeKeyDepth(Root.Right, key, level+1)
 }
