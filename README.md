@@ -28,6 +28,11 @@ Please note some of them are not programming related and explained in problems.m
 
 - Implement substraction, multiplication and division only using the `+` operator: operationswithplus.go (WIP)
 
+Sorting
+-------
+
+- MergeSort for an array of integers: mergesort.go
+
 Trees and Graphs
 ----------------
 
