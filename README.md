@@ -5,6 +5,11 @@ CrackCode exercises and some others, algorithms implementations, in Go
 
 [![Build Status](https://travis-ci.org/ricardclau/crackcode-go.svg)](https://travis-ci.org/ricardclau/crackcode-go)
 
+Strings and arrays
+------------------
+
+- Rotate a matrix 90º in place: rotatematrix90.go
+
 Linked Lists
 ------------
 
