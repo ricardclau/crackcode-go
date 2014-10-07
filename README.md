@@ -33,6 +33,12 @@ Please note some of them are not programming related and explained in problems.m
 
 - Implement substraction, multiplication and division only using the `+` operator: operationswithplus.go (WIP)
 
+Recursion
+---------
+
+- Implement fibonacci: fibonnaci.go
+- Implement an algorithm to print all valid (e g , properly opened and closed) combi- nations of n-pairs of parentheses: parenthesis.go
+
 Sorting
 -------
 
